@@ -1,11 +1,12 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, render_template, request
 app = Flask(__name__)
 
 @app.route("/")
 def hello(): 
   url_for('static', filename='style.css')
-  return "Change occurred"
-  
+  return render_template('hello.html', name='Filipp')
+#templates have access to   request, session, g, and get_flahsed_messages()
+#jinja2
 
 @app.route("/hello")
 def what():
